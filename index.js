@@ -7,14 +7,20 @@ function trataErro(erro) {
 }
 
 function pegaArquivo(caminhoArquivo) {
-    const encoding = 'utf-8' 
-    fs.readFile(caminhoArquivo, encoding, (erro, texto) => {
-        if (erro) {
-            trataErro(erro);
-        }
-        console.log(chalk.green(texto));
-    });
+    const encoding = 'utf-8';
+    fs.promises.readFile(caminhoArquivo, encoding);
+        .then((texto) => console.log(chalk.green(texto));) 
 }
+
+// function pegaArquivo(caminhoArquivo) {
+//     const encoding = 'utf-8' 
+//     fs.readFile(caminhoArquivo, encoding, (erro, texto) => {
+//         if (erro) {
+//             trataErro(erro);
+//         }
+//         console.log(chalk.green(texto));
+//     });
+// }
 
 pegaArquivo('./arquivos/texto.md');
 
