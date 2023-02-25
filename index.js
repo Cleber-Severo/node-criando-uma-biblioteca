@@ -1,5 +1,13 @@
+import fs from 'fs'; 
 import chalk from 'chalk';
 
 
-console.log(chalk.blue('Olá Mundo!'));
-console.log('olá mundo');
+function pegaArquivo(caminhoArquivo) {
+    const encoding = 'utf-8' 
+    fs.readFile(caminhoArquivo, encoding, (_, texto) => {
+        console.log(chalk.green(texto));
+    });
+}
+
+pegaArquivo('./arquivos/texto.md');
+
