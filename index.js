@@ -25,3 +25,5 @@ pegaArquivo('./arquivos/texto.md');
 
 
 // \[[^[\]]*?\]
+
+//  \(https?:\/\/[^\s?#.].[^\s]*\)
